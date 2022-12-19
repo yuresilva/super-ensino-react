@@ -1,0 +1,38 @@
+.TitleContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.QuestionsContent {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  line-height: 2rem;
+}
+
+.GrupResponse {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.GrupButtons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.GrupNexTBack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  transition: color 0.2s;
+  padding: 0.5rem;
+  background-color: var(--green);
+  border-radius: 8px;
+}
