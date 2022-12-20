@@ -20,10 +20,21 @@
   margin: 1rem 0;
 }
 
+.ResponseQuestion {
+  background-color: var(--green);
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: var(--white);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
 .GrupButtons {
   display: flex;
   justify-content: center;
   gap: 3rem;
+  margin: 0 auto;
 }
 
 .GrupNexTBack {

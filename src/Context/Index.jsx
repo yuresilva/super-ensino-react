@@ -7,14 +7,16 @@ export const INITIAL_STATE = {
       materia: "portugues",
       list: [
         {
-          exerciceo: "exerciceos",
+          id: 1,
+          exerciceo: "exerciceos 1",
           difficulty: "easy",
           question: "In the Star Trek universe, what color is Vulcan blood?",
           correct: "Green",
           incorrect: ["Blue", "Red", "Purple"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 2,
+          exerciceo: "exerciceos 2",
           difficulty: "easy",
           question:
             "Kanye West at 2009 VMA&#039;s interrupted which celebrity?",
@@ -22,7 +24,8 @@ export const INITIAL_STATE = {
           incorrect: ["MF DOOM", "Beyonce", "Beck"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 3,
+          exerciceo: "exerciceos 3",
           difficulty: "easy",
           question:
             "Which animated movie was first to feature a celebrity as a voice actor?",
@@ -34,22 +37,25 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 4,
+          exerciceo: "exerciceos 4",
           difficulty: "medium",
           question: "What is Meg&#039;s full name in &quot;Family Guy&quot;?",
           correct: "Megatron Griffin",
           incorrect: ["Who-Cares Griffin", "Neil Griffin", "Megan Griffin"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 5,
+          exerciceo: "exerciceos 5",
           difficulty: "medium",
           question:
             "In Game of Thrones what is the name of Jon Snow&#039;s sword?",
           correct: "Longclaw",
-          incorrect: ["Oathkeeper", "Widow&#039;s Wail", "Needle"],
+          incorrect: ["Oathkeeper", "Widow&Wail", "Needle"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 6,
+          exerciceo: "exerciceos 6",
           difficulty: "medium",
           question:
             "In &quot;The Big Bang Theory&quot;, what is Howard Wolowitz&#039;s nickname in World of Warcraft?",
@@ -58,7 +64,8 @@ export const INITIAL_STATE = {
         },
 
         {
-          exerciceo: "exerciceos",
+          id: 7,
+          exerciceo: "exerciceos 7",
           difficulty: "medium",
           question:
             "In &quot;Star Trek&quot;, what is the Klingon death ritual?",
@@ -70,14 +77,16 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 8,
+          exerciceo: "exerciceos 8",
           difficulty: "hard",
           question: "Which of these Nickelodeon game shows aired first?",
           correct: "Double Dare",
           incorrect: ["Nick Arcade", "Finders Keepers", "Nickelodeon Guts"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 9,
+          exerciceo: "exerciceos 9",
           difficulty: "hard",
           question: "What is the official name of Prince&#039;s backing band?",
           correct: "The Revolution",
@@ -87,17 +96,19 @@ export const INITIAL_STATE = {
     },
     {
       id: 2,
-      materia: "Matematica",
+      materia: "Ciencia",
       list: [
         {
-          exerciceo: "exerciceos",
+          id: 1,
+          exerciceo: "exerciceos 10",
           difficulty: "easy",
-          question: "In the Star Trek universe, what color is Vulcan blood?",
+          question: "Olha ele, what color is Vulcan blood?",
           correct: "Green",
           incorrect: ["Blue", "Red", "Purple"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 2,
+          exerciceo: "exerciceos 11",
           difficulty: "easy",
           question:
             "Kanye West at 2009 VMA&#039;s interrupted which celebrity?",
@@ -105,7 +116,8 @@ export const INITIAL_STATE = {
           incorrect: ["MF DOOM", "Beyonce", "Beck"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 3,
+          exerciceo: "exerciceos 12",
           difficulty: "easy",
           question:
             "Which animated movie was first to feature a celebrity as a voice actor?",
@@ -117,13 +129,16 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 4,
+          exerciceo: "exerciceos 13",
           difficulty: "medium",
           question: "What is Meg&#039;s full name in &quot;Family Guy&quot;?",
           correct: "Megatron Griffin",
           incorrect: ["Who-Cares Griffin", "Neil Griffin", "Megan Griffin"],
         },
         {
+          id: 5,
+          exerciceo: "exerciceos 14",
           difficulty: "medium",
           question:
             "In Game of Thrones what is the name of Jon Snow&#039;s sword?",
@@ -131,21 +146,18 @@ export const INITIAL_STATE = {
           incorrect: ["Oathkeeper", "Widow&#039;s Wail", "Needle"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 6,
+          exerciceo: "exerciceos 15",
           difficulty: "medium",
           question:
             "In &quot;The Big Bang Theory&quot;, what is Howard Wolowitz&#039;s nickname in World of Warcraft?",
           correct: "Wolowizard",
           incorrect: ["Sheldor", "Rajesh", "Priya"],
         },
+
         {
-          difficulty: "medium",
-          question: "Which of these artists do NOT originate from France?",
-          correct: "The Chemical Brothers",
-          incorrect: ["Air", "Justice", "Daft Punk"],
-        },
-        {
-          exerciceo: "exerciceos",
+          id: 7,
+          exerciceo: "exerciceos 16",
           difficulty: "medium",
           question:
             "In &quot;Star Trek&quot;, what is the Klingon death ritual?",
@@ -157,14 +169,16 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 8,
+          exerciceo: "exerciceos 17",
           difficulty: "hard",
           question: "Which of these Nickelodeon game shows aired first?",
           correct: "Double Dare",
           incorrect: ["Nick Arcade", "Finders Keepers", "Nickelodeon Guts"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 9,
+          exerciceo: "exerciceos 18",
           difficulty: "hard",
           question: "What is the official name of Prince&#039;s backing band?",
           correct: "The Revolution",
@@ -174,17 +188,19 @@ export const INITIAL_STATE = {
     },
     {
       id: 3,
-      materia: "Historia",
+      materia: "Matematica",
       list: [
         {
-          exerciceo: "exerciceos",
+          id: 1,
+          exerciceo: "exerciceos 19 ",
           difficulty: "easy",
           question: "In the Star Trek universe, what color is Vulcan blood?",
           correct: "Green",
           incorrect: ["Blue", "Red", "Purple"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 2,
+          exerciceo: "exerciceos 20",
           difficulty: "easy",
           question:
             "Kanye West at 2009 VMA&#039;s interrupted which celebrity?",
@@ -192,7 +208,8 @@ export const INITIAL_STATE = {
           incorrect: ["MF DOOM", "Beyonce", "Beck"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 3,
+          exerciceo: "exerciceos 21",
           difficulty: "easy",
           question:
             "Which animated movie was first to feature a celebrity as a voice actor?",
@@ -204,35 +221,35 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 4,
+          exerciceo: "exerciceos 22",
           difficulty: "medium",
           question: "What is Meg&#039;s full name in &quot;Family Guy&quot;?",
           correct: "Megatron Griffin",
           incorrect: ["Who-Cares Griffin", "Neil Griffin", "Megan Griffin"],
         },
         {
+          id: 5,
+          exerciceo: "exerciceos 23",
           difficulty: "medium",
           question:
             "In Game of Thrones what is the name of Jon Snow&#039;s sword?",
           correct: "Longclaw",
-          incorrect: ["Oathkeeper", "Widow&#039;s Wail", "Needle"],
+          incorrect: ["Oathkeeper", "Wow&#039 Wail", "Needle"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 6,
+          exerciceo: "exerciceos 24",
           difficulty: "medium",
           question:
             "In &quot;The Big Bang Theory&quot;, what is Howard Wolowitz&#039;s nickname in World of Warcraft?",
           correct: "Wolowizard",
           incorrect: ["Sheldor", "Rajesh", "Priya"],
         },
+
         {
-          difficulty: "medium",
-          question: "Which of these artists do NOT originate from France?",
-          correct: "The Chemical Brothers",
-          incorrect: ["Air", "Justice", "Daft Punk"],
-        },
-        {
-          exerciceo: "exerciceos",
+          id: 7,
+          exerciceo: "exerciceos 25",
           difficulty: "medium",
           question:
             "In &quot;Star Trek&quot;, what is the Klingon death ritual?",
@@ -244,14 +261,16 @@ export const INITIAL_STATE = {
           ],
         },
         {
-          exerciceo: "exerciceos",
+          id: 8,
+          exerciceo: "exerciceos 26",
           difficulty: "hard",
           question: "Which of these Nickelodeon game shows aired first?",
           correct: "Double Dare",
           incorrect: ["Nick Arcade", "Finders Keepers", "Nickelodeon Guts"],
         },
         {
-          exerciceo: "exerciceos",
+          id: 9,
+          exerciceo: "exerciceos 27",
           difficulty: "hard",
           question: "What is the official name of Prince&#039;s backing band?",
           correct: "The Revolution",

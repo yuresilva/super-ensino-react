@@ -14,8 +14,8 @@ export function Home() {
           <div className="container">
             <section className="info">
               {state.data.map((item, index) => (
-                <div key={item.id}>
-                  <Category materia={item.materia} />
+                <div key={index}>
+                  <Category key={index} materia={item.materia} />
                 </div>
               ))}
             </section>
