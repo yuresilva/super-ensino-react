@@ -34,7 +34,7 @@ export const Category = ({ materia }) => {
               <Questions
                 questions={questions}
                 value={value}
-                onClick={handleHome}
+                onClick={() => { handleHome() }}
               />
             </>
           ) : (

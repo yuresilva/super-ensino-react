@@ -11,6 +11,7 @@ export function Questions({ questions, onClick, value }) {
     dados: null,
   });
 
+
   const { currentQuestion, currentDados, dados } = state;
   let indiceAtual = 0;
   let valorResult = value.target.innerHTML;
@@ -29,16 +30,14 @@ export function Questions({ questions, onClick, value }) {
 
   useEffect(() => {
     const componentList = () => {
-      questions.list.forEach((element) => {
-        var id = element.exerciceo == valorResult ? element.id : "";
-        const filteredList = questions.list.filter((item) => item.id == id);
-        if (filteredList) {
+      questions.list.map((element) => {
+        if (element.exerciceo === valorResult) {
           setState((prevState) => ({
             ...prevState,
-            dados: filteredList,
-          }));
+            dados: element
+          }))
         }
-      });
+      })
     };
 
     componentList();
@@ -56,29 +55,29 @@ export function Questions({ questions, onClick, value }) {
               <h2>Super Ensino</h2> <span>{currentQuestion + 1}</span> /
               {questions.list.length}
               {console.log(dados)}
-              <h1>{dados.correct}</h1>
+              {/* <h1>{}</h1> */}
             </div>
             <span>Analise as afirmativas a seguir</span>
 
-            <p>II -- Queria saber porque você faltou aula.</p>
-            <p>III -- Acordo cedo porque gosto de estudar.</p>
-            <p>Com releção ao uso dos porquês, estão corretas?</p>
+            <p>{dados.question}</p>
+            {/* <p>III -- Acordo cedo porque gosto de estudar.</p>
+            <p>Assinale a alternativa correta</p> */}
 
             <div className={styles.GrupResponse}>
               <button className={styles.ResponseQuestion}>a</button>
-              <p>Apenas a III Apenas a III</p>
+              <p> {dados.correct} </p>
             </div>
             <div className={styles.GrupResponse}>
               <button className={styles.ResponseQuestion}>b</button>
-              <p>Apenas a III Apenas a III</p>
+              <p>{dados.incorrect[0]}</p>
             </div>
             <div className={styles.GrupResponse}>
               <button className={styles.ResponseQuestion}>c</button>
-              <p>Apenas a III Apenas a III</p>
+              <p>{dados.incorrect[1]}</p>
             </div>
             <div className={styles.GrupResponse}>
               <button className={styles.ResponseQuestion}>d</button>
-              <p>Apenas a III</p>
+              <p>{dados.incorrect[2]}</p>
             </div>
           </div>
           <div className={styles.GrupButtons}>
@@ -93,7 +92,7 @@ export function Questions({ questions, onClick, value }) {
           </div>
         </>
       )}
-                   
+
     </>
   );
 }
