@@ -7,37 +7,58 @@ import { NavLink } from "react-router-dom";
 export function Questions({ questions, onClick, value }) {
   const [state, setState] = useState({
     currentQuestion: 0,
-    currentDados: questions,
     dados: null,
   });
+  const [selectedOption, setSelectedOption] = useState(null);
 
+  const { currentQuestion, dados } = state;
 
-  const { currentQuestion, currentDados, dados } = state;
-  let indiceAtual = 0;
-  let valorResult = value.target.innerHTML;
+  var valorResult = value.target.innerHTML;
 
-  const proximaQuestao = () => {
-    indiceAtual++;
-    exerciceostr = `exerciceos ${indiceAtual + 1}`;
-    // aqui você pode chamar a função que re-renderiza os dados da questão na tela
-  };
+  function updateData() {
+    const { currentQuestion } = state;
 
-  const questaoAnterior = () => {
-    indiceAtual--;
-    exerciceostr = `exerciceos ${indiceAtual + 1}`;
-    // aqui você pode chamar a função que re-renderiza os dados da questão na tela
-  };
+    setState((prevState) => ({
+      ...prevState,
+      dados: questions.list[currentQuestion],
+    }));
+  }
 
+  function handleNext() {
+    setSelectedOption(null);
+    const { currentQuestion } = state;
+
+    if (currentQuestion < questions.list.length - 1) {
+      setState((prevState) => ({
+        ...prevState,
+        currentQuestion: prevState.currentQuestion + 1,
+      }));
+      updateData();
+    }
+  }
+
+  function handleBack() {
+    setSelectedOption(null);
+    const { currentQuestion } = state;
+
+    if (currentQuestion > 0) {
+      setState((prevState) => ({
+        ...prevState,
+        currentQuestion: prevState.currentQuestion - 1,
+      }));
+      updateData();
+    }
+  }
   useEffect(() => {
     const componentList = () => {
       questions.list.map((element) => {
         if (element.exerciceo === valorResult) {
           setState((prevState) => ({
             ...prevState,
-            dados: element
-          }))
+            dados: element,
+          }));
         }
-      })
+      });
     };
 
     componentList();
@@ -46,53 +67,95 @@ export function Questions({ questions, onClick, value }) {
   return (
     <>
       {dados && (
-        <>
+        <div className={styles.QuestionsContainer}>
           <div className={styles.QuestionsContent}>
             <div className={styles.TitleContainer}>
               <NavLink to="/">
                 <House size={32} onClick={onClick} />
               </NavLink>
-              <h2>Super Ensino</h2> <span>{currentQuestion + 1}</span> /
-              {questions.list.length}
+              <h2>Super Ensino</h2> <br />
               {console.log(dados)}
-              {/* <h1>{}</h1> */}
             </div>
+            <span>
+              {" "}
+              Exercíceo {currentQuestion + 1} / {questions.list.length}
+            </span>
             <span>Analise as afirmativas a seguir</span>
 
             <p>{dados.question}</p>
-            {/* <p>III -- Acordo cedo porque gosto de estudar.</p>
-            <p>Assinale a alternativa correta</p> */}
-
-            <div className={styles.GrupResponse}>
-              <button className={styles.ResponseQuestion}>a</button>
+            <div
+              className={`${styles.GrupResponse} ${
+                selectedOption === "a"
+                  ? styles.selectedOption
+                  : styles.unselectedOption
+              }`}
+            >
+              <button
+                className={styles.ResponseQuestion}
+                onClick={() => setSelectedOption("a")}
+              >
+                a
+              </button>
               <p> {dados.correct} </p>
             </div>
-            <div className={styles.GrupResponse}>
-              <button className={styles.ResponseQuestion}>b</button>
+            <div
+              className={`${styles.GrupResponse} ${
+                selectedOption === "b"
+                  ? styles.selectedOption
+                  : styles.unselectedOption
+              }`}
+            >
+              <button
+                className={styles.ResponseQuestion}
+                onClick={() => setSelectedOption("b")}
+              >
+                b
+              </button>
               <p>{dados.incorrect[0]}</p>
             </div>
-            <div className={styles.GrupResponse}>
-              <button className={styles.ResponseQuestion}>c</button>
+            <div
+              className={`${styles.GrupResponse} ${
+                selectedOption === "c"
+                  ? styles.selectedOption
+                  : styles.unselectedOption
+              }`}
+            >
+              <button
+                className={styles.ResponseQuestion}
+                onClick={() => setSelectedOption("c")}
+              >
+                c
+              </button>
               <p>{dados.incorrect[1]}</p>
             </div>
-            <div className={styles.GrupResponse}>
-              <button className={styles.ResponseQuestion}>d</button>
+            <div
+              className={`${styles.GrupResponse} ${
+                selectedOption === "d"
+                  ? styles.selectedOption
+                  : styles.unselectedOption
+              }`}
+            >
+              <button
+                className={styles.ResponseQuestion}
+                onClick={() => setSelectedOption("d")}
+              >
+                d
+              </button>
               <p>{dados.incorrect[2]}</p>
             </div>
+            <div className={styles.GrupButtons}>
+              <button onClick={handleBack} className={styles.GrupNexTBack}>
+                <ArrowLeft size={32} />
+                Voltar
+              </button>
+              <button onClick={handleNext} className={styles.GrupNexTBack}>
+                Próximo
+                <ArrowRight size={32} />
+              </button>
+            </div>
           </div>
-          <div className={styles.GrupButtons}>
-            <NavLink className={styles.GrupNexTBack} to="/">
-              <ArrowLeft size={32} />
-              Voltar
-            </NavLink>
-            <NavLink className={styles.GrupNexTBack} to="/">
-              Próximo
-              <ArrowRight size={32} />
-            </NavLink>
-          </div>
-        </>
+        </div>
       )}
-
     </>
   );
 }

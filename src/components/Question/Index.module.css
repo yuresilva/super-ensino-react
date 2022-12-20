@@ -1,8 +1,6 @@
-.TitleContainer {
+.QuestionsContainer {
   display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
 }
 
 .QuestionsContent {
@@ -10,6 +8,23 @@
   flex-direction: column;
   padding: 2rem;
   line-height: 2rem;
+  align-items: flex-start;
+  max-width: 40rem;
+}
+
+.TitleContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selectedOption {
+  background-color: var(--green);
+}
+
+.unselectedOption {
+  color: #ccc; /* cor cinza */
 }
 
 .GrupResponse {
@@ -32,18 +47,26 @@
 
 .GrupButtons {
   display: flex;
-  justify-content: center;
+  margin-top: 2rem;
   gap: 3rem;
-  margin: 0 auto;
 }
 
 .GrupNexTBack {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: var(--white);
   transition: color 0.2s;
   padding: 0.5rem;
   background-color: var(--green);
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.GrupNexTBack:hover {
+  background-color: var(--blue);
+  color: var(--white);
 }
