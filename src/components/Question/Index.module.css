@@ -70,3 +70,9 @@
   background-color: var(--blue);
   color: var(--white);
 }
+
+@media (max-width: 768px) {
+  .GrupNexTBack {
+    width: 5rem;
+  }
+}

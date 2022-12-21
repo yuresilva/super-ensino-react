@@ -36,6 +36,7 @@
   background-color: var(--blue);
   border-radius: 8px;
   border: none;
+  cursor: pointer;
 }
 
 .contentList {

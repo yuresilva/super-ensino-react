@@ -43,3 +43,10 @@
 .sidebar footer a:hover {
   color: var(--dar-blue);
 }
+
+@media (max-width: 768px) {
+  .sidebar footer a {
+    background-color: var(--white);
+    color: var(--blue);
+  }
+}

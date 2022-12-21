@@ -13,7 +13,7 @@ export function Questions({ questions, onClick, value }) {
 
   const { currentQuestion, dados } = state;
 
-  var valorResult = value.target.innerHTML;
+  let valorResult = value.target.innerHTML;
 
   function updateData() {
     const { currentQuestion } = state;
@@ -56,6 +56,7 @@ export function Questions({ questions, onClick, value }) {
           setState((prevState) => ({
             ...prevState,
             dados: element,
+            currentQuestion: element.id - 1,
           }));
         }
       });
@@ -74,15 +75,17 @@ export function Questions({ questions, onClick, value }) {
                 <House size={32} onClick={onClick} />
               </NavLink>
               <h2>Super Ensino</h2> <br />
-              {console.log(dados)}
             </div>
             <span>
-              {" "}
               Exercíceo {currentQuestion + 1} / {questions.list.length}
             </span>
             <span>Analise as afirmativas a seguir</span>
-
-            <p>{dados.question}</p>
+            <p>{dados.question1}</p>
+            <p>{dados.question2}</p>
+            <p>{dados.question3}</p>
+            <p>
+              <strong>{dados.question}</strong>
+            </p>
             <div
               className={`${styles.GrupResponse} ${
                 selectedOption === "a"
@@ -96,7 +99,7 @@ export function Questions({ questions, onClick, value }) {
               >
                 a
               </button>
-              <p> {dados.correct} </p>
+              <p> {dados.correct[0]} </p>
             </div>
             <div
               className={`${styles.GrupResponse} ${
@@ -111,7 +114,7 @@ export function Questions({ questions, onClick, value }) {
               >
                 b
               </button>
-              <p>{dados.incorrect[0]}</p>
+              <p>{dados.correct[1]}</p>
             </div>
             <div
               className={`${styles.GrupResponse} ${
@@ -126,7 +129,7 @@ export function Questions({ questions, onClick, value }) {
               >
                 c
               </button>
-              <p>{dados.incorrect[1]}</p>
+              <p>{dados.correct[2]}</p>
             </div>
             <div
               className={`${styles.GrupResponse} ${
@@ -141,7 +144,7 @@ export function Questions({ questions, onClick, value }) {
               >
                 d
               </button>
-              <p>{dados.incorrect[2]}</p>
+              <p>{dados.correct[3]}</p>
             </div>
             <div className={styles.GrupButtons}>
               <button onClick={handleBack} className={styles.GrupNexTBack}>

@@ -7,7 +7,7 @@ export function Home() {
   const { state } = useContext(AppContext);
   return (
     <div className="App">
-      <h2>Acentuação Gráfica</h2>
+      <h2>Cursos</h2>
       <span></span>
       <div>
         <main>
