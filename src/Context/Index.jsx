@@ -193,7 +193,7 @@ export const INITIAL_STATE = {
         },
         {
           "id": 9,
-          exerciceo: "exerciceo 9",
+          "exerciceo": "exerciceo 9",
           "question1": "I- O resultado da raiz cúbica de 1 é igual a 9.",
           "question2": "II- O resultado da raiz cúbica de 223 é igual a 10.",
           "question3": "III- O resultado da raiz cúbica de 31 é igual a 11.",
